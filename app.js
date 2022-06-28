@@ -1,12 +1,29 @@
-const doSomething = function(){
-    console.log('d')
+const counter = document.querySelector("h1#counter");
+
+const interval = function () {
+  let val = counter.innerHTML;
+  val++;
+  counter.innerHTML = val;
+};
+
+let intervalId = null;
+
+function start() {
+  if (intervalId) return window.alert("Timer is already running");
+  intervalId = setInterval(interval, 1000);
 }
 
-setTimeout(doSomething,0)
-
-console.log('a')
-console.log('b')
-console.log('c')
-for(let i =0;i<1000;i++){
-    console.log('block')
+function stop() {
+  if (!intervalId) return window.alert("NO timer to stop");
+  clearInterval(intervalId);
+  intervalId = null;
 }
+
+function reset() {
+  if (intervalId) {
+    stop();
+  }
+  counter.innerHTML = 0;
+}
+
+console.log(new Date().toLocaleTimeString())
