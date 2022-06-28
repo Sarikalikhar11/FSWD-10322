@@ -1,19 +1,12 @@
-const arr = [1,2,3] 
-
-const obj = {
-    name:"C class",
-    brand: "Mercedes",
-    model:2022,
-    log:()=>{console.log('this is mercedes')}
+const doSomething = function(){
+    console.log('d')
 }
 
-console.log(window)
+setTimeout(doSomething,0)
 
-
-console.log(window.innerHeight)
-console.log(window.innerWidth)
-
-// const name = window.prompt("What is your name ?")
-
-window.open("https://youtube.com","_blank")
-console.log(window.location)
+console.log('a')
+console.log('b')
+console.log('c')
+for(let i =0;i<1000;i++){
+    console.log('block')
+}
