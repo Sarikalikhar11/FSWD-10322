@@ -1,29 +1,20 @@
-const counter = document.querySelector("h1#counter");
+const todoList = document.querySelector("ol");
+const input = document.querySelector('input')
 
-const interval = function () {
-  let val = counter.innerHTML;
-  val++;
-  counter.innerHTML = val;
+const chores = ["Workout", "Eat", "Work", "SLeep"];
+
+const displayList = (chores) => {
+  chores.forEach((chore) => {
+    const ele = document.createElement('li')
+    ele.innerHTML=chore
+    todoList.appendChild(ele)
+  });
 };
 
-let intervalId = null;
-
-function start() {
-  if (intervalId) return window.alert("Timer is already running");
-  intervalId = setInterval(interval, 1000);
+const handleAdd = ()=>{
+  const eleToAdd = document.createElement('li')
+  eleToAdd.innerHTML = input.value
+  todoList.appendChild(eleToAdd)
 }
 
-function stop() {
-  if (!intervalId) return window.alert("NO timer to stop");
-  clearInterval(intervalId);
-  intervalId = null;
-}
-
-function reset() {
-  if (intervalId) {
-    stop();
-  }
-  counter.innerHTML = 0;
-}
-
-console.log(new Date().toLocaleTimeString())
+displayList(chores);
