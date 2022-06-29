@@ -5,27 +5,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script defer src="./app.js"></script>
+    <script defer src="./public/js/app.js"></script>
+    <link rel="stylesheet" href="./public/css/style.css">
 </head>
- body {
-            transition: 0.4s ease-in-out;
-            background-color: white;
-            color: black;
-        }
-        
-        body.dark {
-            background-color: black;
-            color: white;
-        }
-    </style>
+
 </head>
 
 <body class="light">
-    <h1>Todo List</h1>
-    <input type="text">
-    <button>Add</button>
-    <ol>
-    </ol>
-</body>
+    <header></header>
 
+    <div class="container">
+        <div class="scoreboard">
+            <div class="user">0</div>
+            <div class="divide">|</div>
+            <div class="comp">0</div>
+        </div>
+        <div class="message"></div>
+        <div class="options">
+            <img id="rock" src="./public/assets/rock.svg" alt="rock">
+            <img id="paper" src="./public/assets/paper.svg" alt="paper">
+            <img id="scissors" src="./public/assets/scissors.svg" alt="scissors">
+        </div>
+    </div>
+
+    <footer></footer>
+
+</body>
 </html>
